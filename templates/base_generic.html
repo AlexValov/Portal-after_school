@@ -1,0 +1,161 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" icontent="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equv="X-UA-Compatible" content="ie=edge">
+
+   {% block title %}<title>Портал</title>{% endblock %}
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+{#</head>#}
+{#<body>#}
+{#  <div class="container-fluid">#}
+{##}
+{#    <div class="row">#}
+{#      <div class="col-sm-2">#}
+{#      {% block sidebar %}#}
+{#      <ul class="sidebar-nav">#}
+{#          <li><a href="{% url 'index' %}">Home</a></li>#}
+{#          <li><a href="">Все кружки</a></li>#}
+{#          <li><a href="">Все мероприятия</a></li>#}
+{#      </ul>#}
+{##}
+{#{% endblock %}#}
+{#      </div>#}
+{#      <div class="col-sm-10 ">#}
+{##}
+{#      </div>#}
+{#    </div>#}
+{##}
+{#  </div>#}
+{#</body>#}
+{#</html>#}
+
+
+</head>
+<body>
+<div class wrapper >
+    <div class="header">
+        <div class="color-bars">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col color-bar bg-warning" style="height: 4px"></div>
+              <div class="col color-bar bg-success"></div>
+              <div class="col color-bar bg-danger"></div>
+              <div class="col color-bar bg-info"></div>
+              <div class="col color-bar bg-primary"></div>
+              <div class="col color-bar bg-secondary"></div>
+              <div class="col color-bar bg-warning"></div>
+              <div class="col color-bar bg-success"></div>
+              <div class="col color-bar bg-danger"></div>
+              <div class="col color-bar bg-info"></div>
+              <div class="col color-bar bg-primary"></div>
+              <div class="col color-bar bg-secondary"></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto" id="reg-menu">
+                    <h5 style="color:#D1D4D5">Date: 8.04.2019</h5>
+                    </div>
+                    <div class="col text-right " id="reg-menu">
+                      {% if user.is_authenticated %}
+                         <i class="fas fa-user" style="color:#B5D56A"></i> {{ user.get_username }}&nbsp&nbsp&nbsp&nbsp
+                         <a href="{% url 'logout'%}?next={{request.path}}"><i class="fas fa-sign-in-alt " style="color:#B5D56A"></i>Выйти</a>
+                      {% else %}
+                           <a href="{% url 'login'%}?next={{request.path}}"><i class="fas fa-sign-in-alt " style="color:#B5D56A"></i> Войти</a>&nbsp&nbsp
+                           <a href="" ><i class="fas fa-user-plus" style="color:#B5D56A"></i> Зарегистрироваться </a>
+
+                      {% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-light " >
+
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="/static/img/logo-school.png" height="50" width="170" class="d-inline-block align-top" alt="">
+                </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+               <div class="row justify-content-end" >
+                  <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                    <ul class="navbar-nav   ">
+                      <li class="nav-item dropdown ">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../../static/img/brush-pencil.png" height="50" width="50" class="rounded-circle"/>
+                            <br/>
+                            <b >Кружки</b>
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">Спортивные</a>
+                              <a class="dropdown-item" href="#">Рукоделие</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Показать все</a>
+                            </div>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav  ">
+                      <li class="nav-item dropdown ">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../../static/img/compose.png" height="50" width="50" alt="..." class="rounded-circle"/>
+
+
+                            <br/>
+                                <b>Занятия</b>
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">Репетиторы</a>
+                              <a class="dropdown-item" href="#">Подготовка к школе</a>
+                              <a class="dropdown-item" href="#">Развивашки</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Показать все</a>
+                            </div>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav  ">
+                      <li class="nav-item dropdown ">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../../static/img/slr.png" height="50" width="50" alt="..." class="rounded-circle"/>
+                            <br/>
+                                <b>Афиша</b>
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">Развлекательные</a>
+                              <a class="dropdown-item" href="#">Позновательные</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Показать все</a>
+                            </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                {% block content %}{% endblock %}
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

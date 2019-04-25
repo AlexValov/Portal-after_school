@@ -1,0 +1,74 @@
+.wrapper {
+    width:960px;
+    max-width:100%;
+    margin:0 auto;
+}
+
+/*HEADER*/
+.panel {
+    background-color: #2F3C43;
+    height:50px;
+}
+.color-bars {
+    opacity: 0.8;      /*Полупрозрачный фон*/
+}
+/*регистрация и вход*/
+#reg-menu  {
+    font-size: 17px;
+    position: center;
+    bottom: -10px;
+    }
+#reg-menu  a {
+    font-family:  Arial,Helvetica,sans-serif;
+    color:#D1D4D5;
+}
+/*Навбар*/
+.navbar {
+    height: 100px;
+    background-color: white;
+}
+.nav-item{
+    text-align: center;
+     margin: 5px 50px 4px 5px;
+}
+/*баннер на главной*/
+.image {
+	position: relative;
+}
+.image h1 {
+	position: absolute;
+	top	: 250px;
+	left: 0;
+	width: 100%;
+    color: white;
+	font: bold 50x/90px, cosmic-sans;
+	#background: rgba(0, 0, 0, 0.3);
+	#padding: 90px;
+    text-align: center;
+}
+/*страницы регистрации и входа*/
+.bg-ruby {
+  background-color:#ebebeb;
+}
+
+.btn-red {
+  color: white;
+  background-color: #E21E35;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+  color: white;
+  background-color: #Ec4D57;
+}
+.panel-body {
+    border: 2px #808080 solid; /* Параметры рамки */
+    background: #e3ffec; /* Цвет фона */
+    padding: 9px; /* Поля вокруг текста */
+    margin: 3px; /* Отступы вокруг */
+    font-family: "Comic Sans MS";
+    border-radius: 5px; /* закругленные углы рамки */
+}
+#da {
+    background-color: white;
+}
