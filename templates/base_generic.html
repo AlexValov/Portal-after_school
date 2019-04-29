@@ -70,11 +70,11 @@
                     </div>
                     <div class="col text-right " id="reg-menu">
                       {% if user.is_authenticated %}
-                         <i class="fas fa-user" style="color:#B5D56A"></i> {{ user.get_username }}&nbsp&nbsp&nbsp&nbsp
+                          <a href="{% url 'account' %}"><i class="fas fa-user" style="color:#B5D56A"></i> {{ user.get_username }}&nbsp&nbsp&nbsp&nbsp</a>
                          <a href="{% url 'logout'%}?next={{request.path}}"><i class="fas fa-sign-in-alt " style="color:#B5D56A"></i>Выйти</a>
                       {% else %}
                            <a href="{% url 'login'%}?next={{request.path}}"><i class="fas fa-sign-in-alt " style="color:#B5D56A"></i> Войти</a>&nbsp&nbsp
-                           <a href="" ><i class="fas fa-user-plus" style="color:#B5D56A"></i> Зарегистрироваться </a>
+                           <a href="{% url 'sign-up'%}" ><i class="fas fa-user-plus" style="color:#B5D56A"></i> Зарегистрироваться </a>
 
                       {% endif %}
 

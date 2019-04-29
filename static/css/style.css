@@ -17,8 +17,10 @@
     font-size: 17px;
     position: center;
     bottom: -10px;
+    color:#D1D4D5;
     }
 #reg-menu  a {
+    text-decoration: none;
     font-family:  Arial,Helvetica,sans-serif;
     color:#D1D4D5;
 }
@@ -63,12 +65,16 @@
 }
 .panel-body {
     border: 2px #808080 solid; /* Параметры рамки */
-    background: #e3ffec; /* Цвет фона */
+    background: #9fcdff; /* Цвет фона */
     padding: 9px; /* Поля вокруг текста */
     margin: 3px; /* Отступы вокруг */
-    font-family: "Comic Sans MS";
+    font-family:;
     border-radius: 5px; /* закругленные углы рамки */
-}
+ }
+
 #da {
     background-color: white;
+}
+.text-center {
+    text-align: center;
 }
