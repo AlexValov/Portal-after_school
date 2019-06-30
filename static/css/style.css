@@ -91,9 +91,18 @@ body{
     font-size: small;
     text-align: justify;
 }
-
-
-
+#card-detail h3 {
+    color: #0056b3;
+}
+#card-detail p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: justify;
+}
+#card-detail li {
+    font-size: 14px;
+    line-height: 18px;
+}
 
 
 /* FOOTER */

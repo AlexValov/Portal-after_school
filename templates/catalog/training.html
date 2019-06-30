@@ -1,12 +1,56 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="container mt-4 bg-white ">
-  <div class="row ">
-    <div class="col a">
-        <img src="{{ training.image.url }}" width="400" height="400" alt="">
+<div class="container w-50  mt-3 bg-white" id="card-detail">
+    <div class="row ">
+        <div class="col mb-2 mt-2">
+            <h3 >{{ training.title }} </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <img src="{{ training.image.url }}" width="500" height="500" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-11 ml-4">
+            <br>
+            <h6>Описание</h6>
+            <hr>
+            <p>&nbsp&nbsp{{ training.description }}</p>
+         </div>
+    </div>
+    <hr>
+    <div class="row ml-2">
+        <div class="col-7 ">
+            <h6>Контактные данные</h6>
+             <ul class="list-unstyled ml-3 mb-4 text-info">
+                  <li><i class="far fa-address-card"></i>  {{ training.company }}</li>
+                  <li><i class="fas fa-city"></i> {{ training.city }}</li>
+                  <li><i class="fas fa-map-marker-alt"></i> {{ training.adress }}</li>
+                  <li><i class="fas fa-phone-square"></i> {{ training.phone }}</li>
+                  <li><i class="fas fa-globe-americas"></i> {{ training.website }}</li>
+                  <li><i class="fas fa-envelope"></i> {{ training.email }}</li>
+              </ul>
+        </div>
+
+        <div class="col-5 mt-4">
+            <ul class="list">
+                  <li> {{ training.gender }}</li>
+                  <li> Возраст  с {{ training.age_from }} до {{ training.age_up }} лет</li>
+                  <li > Цена: {{ training.price }}</li>
+             </ul>
+        </div>
 
     </div>
-  </div>
+
+
+
+
+
+
+
+
+
 </div>
 {% endblock %}
