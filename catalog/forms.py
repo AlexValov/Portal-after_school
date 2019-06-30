@@ -20,7 +20,7 @@ class UserFormEdit(forms.ModelForm):
 class TrainingForm(forms.ModelForm):
     class Meta:
         model = Tng
-        fields = ('subcategory', 'title', 'gender', 'age', 'description', 'image', 'city', 'adress', 'phone', 'website', 'email', 'price')
+        fields = ('subcategory', 'title', 'gender', 'age_from', 'age_up', 'description', 'image', 'company', 'city', 'adress', 'phone', 'website', 'email', 'price')
 
 
 

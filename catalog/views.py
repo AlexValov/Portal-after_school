@@ -73,7 +73,7 @@ def add_training(request):
         if form.is_valid():
             tng = form.save(commit=False)
             tng.save()
-            return redirect(training)
+            return redirect(index)
 
 
     return render(request, 'catalog/add_training.html', {

@@ -28,7 +28,7 @@ urlpatterns = [
     path('catalog/account/', views.account, name='account'),
     path('catalog/calalog/<str:slug>/', views.category_view, name='category_view'),
     path('catalog/training/<str:slug>/', views.training_view, name='training_view'),
-    path('catalog/training/add/', views.add_training, name='add_training')
+    path('catalog/training_add/', views.add_training, name='add_training')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 from django.views.generic import RedirectView

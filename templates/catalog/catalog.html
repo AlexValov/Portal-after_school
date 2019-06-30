@@ -3,32 +3,38 @@
 
 {% block content %}
 
+    <a href="{% url "add_training" %}">Добавить секцию</a>
+
 <div class="container offset-2 mt-3">
     <h3 >{{ category.name }}</h3>
     {% for tng in tng_of_category %}
-    <div class="card  w-75">
+    <div class="card w-75">
       <div class="card-body" >
           <div class="row">
               <div class="col">
-                  <h6 class="card-title text-info ">{{ tng.title }} </h6>
+                  <a href="{{tng.get_absolute_url  }}"> <h6 class="card-title text-info ">{{ tng.title }} </h6></a>
+
               </div>
               <div class="col text-right">
-                  <h6 class="age">  c {{ tng.age }}лет</h6>
+                  <h6 class="age text-danger ">  c {{ tng.age_from }} до {{ tng.age_up }} лет</h6>
               </div>
           </div>
-
 
           <div class="row">
             <div class="col-sm-2">
                <img class="card-img-left" src="{{ tng.image.url }}" width="100" height="100" alt="">
             </div>
             <div class="col-sm-5">
-                <p class="card-text">{{ tng.description|truncatechars:50 }}</p>
+                <p class="card-text ">&nbsp&nbsp{{ tng.description|truncatechars:170 }}</p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
              <ul class="list-unstyled mt-0 mb-0">
-                  <li>-{{ tng.gender }}</li>
-                  <li>-{{ tng.city }}</li>
+                  <li><i class="fas fa-user-friends"></i> {{ tng.gender }}</li>
+                  <li><i class="fas fa-city"></i> {{ tng.city }}</li>
+                  <li><i class="fas fa-map-marker-alt"></i> {{ tng.adress }}</li>
+                  <li><i class="fas fa-phone-square"></i> {{ tng.phone }}</li>
+                  <li class="text-info"><i class="fas fa-money-bill-wave"></i> {{ tng.price }}</li>
+
               </ul>
             </div>
           </div>
