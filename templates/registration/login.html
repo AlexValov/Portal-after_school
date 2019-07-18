@@ -12,14 +12,22 @@
     please login with an account that has access.</p>
     {% else %}
      <div class="container">
-       <div class="row ">
-         <div class="col-4 offset-4">
+       <div class="row justify-content-center align-items-center ">
+         <div class="col-4 ">
             <div class="panel-body mt-4">
                <h4 class="text-center">Введите логин и пароль:</h4>
                 <br/>
                 <form method="POST">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                 <div class="field-in-form">
+                  {% for field in form %}
+
+                     <span>{{ field.label }}</span>
+                      <br/>
+                      {{ field }}
+                      <br/>
+    {% endfor %}
+                 </div>
                     <p><a href="{% url 'password_reset' %}">Забыли пароль?</a>
                       <button type="submit" class="btn btn-red  mb-2 float-right">Войти</button>
                     </p>

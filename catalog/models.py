@@ -3,6 +3,7 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from django.shortcuts import reverse
 from transliterate import translit
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -48,6 +49,7 @@ class Gender(models.Model):
 
 
 class Tng(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, verbose_name='Категория:')
     title = models.CharField(max_length=100, db_index=True, verbose_name='Название:')
     gender = models.ForeignKey(Gender, on_delete=True, verbose_name='Возраст:')

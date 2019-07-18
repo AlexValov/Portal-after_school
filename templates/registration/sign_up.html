@@ -1,25 +1,24 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-     <div class="row col-3 offset-4 mt-4">
+     <div class="container">
+       <div class="row justify-content-center align-items-center ">
+         <div class="col-3 ">
         <div class="panel-body ">
            <h4 class="text-center">Регистрация:</h4>
-            <br/>
             <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
-
-                        {% for field in user_form %}
-        <div class="row">
-            <span class="ml-5 ">{{field.label_tag}}</span>
-            <div class="col-md-10 ml-4">{{field}}</div>
-        </div>
-        {% endfor %}
-
-              <button type="submit" class="btn btn-red mt-3  mb-2">Зарегистрироваться</button>
+               {% for field in user_form %}
+                 <div class="form-group " id="field-in-form">
+                     <span>{{ field.label }}</span>
+                              {{ field }}
+                            {% endfor %}
+                 </div>
+              <button type="submit" class="btn btn-red w-100">Зарегистрироваться</button>
             </form>
         </div>
      </div>
-
+        </div>
+     </div>
 {% endblock %}
 

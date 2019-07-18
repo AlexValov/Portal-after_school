@@ -64,14 +64,13 @@ def category_view(request, slug):
         'tng_of_category': tng_of_category
     })
 
-
-
 def add_training(request):
     form = TrainingForm()
     if request.method == "POST":
         form = TrainingForm(request.POST, request.FILES)
         if form.is_valid():
             tng = form.save(commit=False)
+            tng.author = request.user
             tng.save()
             return redirect(index)
 

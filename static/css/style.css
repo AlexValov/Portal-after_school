@@ -1,5 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body{
-    background-color: #EEEEEE;
+    background-color: white;
+      margin-bottom: 60px;// значение высоты #footer
 }
 
 .wrapper {
@@ -28,14 +34,13 @@ body{
     font-family:  Arial,Helvetica,sans-serif;
     color:#D1D4D5;
 }
-/*Навбар*/
-.navbar {
-    height: 100px;
-    background-color: white;
-}
-.nav-item{
-    text-align: center;
-     margin: 5px 50px 4px 5px;
+.nav-panel a {
+
+    font-size: 16px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif, bold;
+    font-weight: normal;
+
+
 }
 /*баннер на главной*/
 .image {
@@ -61,9 +66,6 @@ body{
     color: white;
 	/*font: bold 50x/90px, cosmic-sans;*/
 	/*#background: rgba(0, 0, 0, 0.3);*/
-
-
-
 
 }
 #carousel-img-one {
@@ -96,15 +98,16 @@ body{
 
 
 
-/*страницы регистрации и входа*/
+/*страницы регистрации и входа и всех форм*/
 .bg-ruby {
   background-color:#ebebeb;
+
 }
 
 .btn-red {
     color: white;
     background-color: #E21E35;
-    text-align: right ;
+
 }
 
 .btn-red:hover,
@@ -113,20 +116,32 @@ body{
   background-color: #Ec4D57;
 }
 .panel-body {
-    border: 2px #808080 solid; /* Параметры рамки */
-    background: lightsteelblue; /* Цвет фона */
-    padding: 9px; /* Поля вокруг текста */
-    margin: 3px; /* Отступы вокруг */
-    border-radius: 5px; /* закругленные углы рамки */
+    border: 1px #808080 solid; /* Параметры рамки */
+    background: #17a2b8; /* Цвет фона */
+    padding: 20px; /* Поля вокруг текста */
+    margin: 10px; /* Отступы вокруг */
+    border-radius: 10px; /* закругленные углы рамки */
  }
+
+.panel-body h4 {
+    font-size: 30px;
+    font-family: Calibri;
+    text-shadow: black 2px 3px 4px;
+    font-style: initial;
+    color: white;
+
+}
 
 #da {
     background-color: white;
 }
-.text-center {
-    text-align: center;
+#field-in-form{
+    color: white;
+    font-size:17px;
+    font-family: Calibri;
+    text-shadow: black 1px 3px 4px;
+    font-style: initial;
 }
-
 
 /* training-card */
 .card-body h6 {
@@ -156,12 +171,15 @@ body{
 
 }
 .page-footer {
-
   position: absolute;
-  left: 0;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
-  height: 0px;
+  height: 60px;
+  /*position: relative;*/
+  /*left: 0;*/
+  /*bottom: 0px;*/
+  /*width: 100%;*/
+  /*height: 0px;*/
   color: white;
 }
 .footer-copyright {
