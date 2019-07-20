@@ -1,9 +1,7 @@
-{% extends "base_generic.html" %}
+{% extends 'catalog\profile.html' %}
 
-{% block content %}
-     <div class="container">
-       <div class="row justify-content-center align-items-center">
-         <div class="col-4 ">
+{% block body %}
+
             <div class="panel-body ">
                <h4 class="text-center">Изменить профиль:</h4>
               <form method="POST" enctype="multipart/form-data">
@@ -15,11 +13,9 @@
                     {% endfor %}
                  </div>
                   <br>
-                <button type="submit" class="btn btn-red w-100 ">Обновить</button>
+                <button type="submit" class="btn btn-red  justify-content-lg-center ">Обновить</button>
               </form>
             </div>
-         </div>
-         </div>
-     </div>
+
 {% endblock %}
 

@@ -1,9 +1,7 @@
-{% extends "base_generic.html" %}
+{% extends 'catalog\profile.html' %}
 
-{% block content %}
-     <div class="container ">
-       <div class="row mt-4  justify-content-center align-items-center ">
-         <div class="col-5 ">
+{% block body %}
+
             <div class="panel-body ">
                <h4 class="text-center ">Добавить занятие</h4>
                 <hr class="bg-info">
@@ -18,7 +16,4 @@
                 <button type="submit" class="btn btn-red w-50 ">Добавить</button>
               </form>
             </div>
-         </div>
-         </div>
-     </div>
 {% endblock %}

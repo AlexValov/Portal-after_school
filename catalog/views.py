@@ -47,6 +47,9 @@ def account(request):
         'user_form': user_form
     })
 
+def profile(request):
+    return render(request, 'catalog/profile.html')
+
 def training_view(request, slug):
     training = Tng.objects.get(slug__iexact=slug)
 
