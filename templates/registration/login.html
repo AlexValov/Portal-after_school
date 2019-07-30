@@ -13,10 +13,10 @@
     {% else %}
      <div class="container">
        <div class="row justify-content-center align-items-center ">
-         <div class="col-4 ">
+         <div class="col-4">
             <div class="panel-body mt-4">
-               <h4 class="text-center">Введите логин и пароль:</h4>
-                <br/>
+               <h5 class="text-center text-danger">Введите логин и пароль:</h5>
+
                 <form method="POST">
                     {% csrf_token %}
                  <div class="field-in-form">
@@ -28,8 +28,11 @@
                       <br/>
     {% endfor %}
                  </div>
-                    <p><a href="{% url 'password_reset' %}">Забыли пароль?</a>
+                    <p>
                       <button type="submit" class="btn btn-red  mb-2 float-right">Войти</button>
+
+                <a href="{% url 'password_reset' %}">Забыли пароль?</a>
+                                <a href="{% url 'sign-up' %}">Зарегистрироваться</a>
                     </p>
 
                  </form>

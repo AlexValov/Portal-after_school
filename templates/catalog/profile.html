@@ -1,24 +1,24 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+
     <br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-<div class="list-group">
-  <span  class="list-group-item list-group-item-action active ">
-    Мой профиль
-  </span>
-  <a href="{% url 'account' %}" class="list-group-item list-group-item-action">Изменить профиль</a>
-  <a href="#" class="list-group-item list-group-item-action">Мои секции</a>
-  <a href="{% url 'add_training' %}" class="list-group-item list-group-item-action">Добавить секцию</a>
-  <a href="{% url 'logout'%}?next={{request.path}}" class="list-group-item list-group-item-action disabled">Выход</a>
-</div>
+            <div class="list-group">
+              <span  class="list-group-item list-group-item-action active ">
+                Мой профиль
+              </span>
+              <a href="{% url 'account' %}" class="list-group-item list-group-item-action">Изменить профиль</a>
+              <a href="{% url 'catalog_in_profile' %}" class="list-group-item list-group-item-action">Мои секции</a>
+              <a href="{% url 'add_training' %}" class="list-group-item list-group-item-action">Добавить секцию</a>
+              <a href="{% url 'logout'%}?next=?next=/" class="list-group-item list-group-item-action disabled">Выход</a>
+            </div>
         </div>
-        <div class="col-6 offset-1 ">
+        <div class="col-8">
             {% block body %}
-
-            {% endblock %}
+             {% endblock %}
         </div>
     </div>
 </div>

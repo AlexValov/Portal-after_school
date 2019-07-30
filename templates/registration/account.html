@@ -1,21 +1,25 @@
 {% extends 'catalog\profile.html' %}
 
 {% block body %}
+<div class="row  offset-1">
+    <div class="col-6">
+         <div class="panel-body ">
+           <h4 class="text-center">Изменить профиль:</h4>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+             {% for field in user_form %}
+        {#               <div class="field-in-form" id="field-in-form">  убрал из-за смещения футера#}
+                 <span>{{ field.label }}</span>
+                  {{ field }}
+                {% endfor %}
+        {#                 </div>#}
+              <br>
+            <button type="submit" class="btn btn-red  justify-content-lg-center ">Обновить</button>
+          </form>
+        </div>
+    </div>
 
-            <div class="panel-body ">
-               <h4 class="text-center">Изменить профиль:</h4>
-              <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                 {% for field in user_form %}
-               <div class="field-in-form" id="field-in-form">
-                     <span>{{ field.label }}</span>
-                      {{ field }}
-                    {% endfor %}
-                 </div>
-                  <br>
-                <button type="submit" class="btn btn-red  justify-content-lg-center ">Обновить</button>
-              </form>
-            </div>
 
+</div>
 {% endblock %}
 

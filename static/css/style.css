@@ -5,6 +5,7 @@ html {
 
 body{
     background-color: white;
+     background-image: url("../../static/img/fon1.jpg");
       margin-bottom: 60px;// значение высоты #footer
 }
 
@@ -115,41 +116,62 @@ body{
   color: white;
   background-color: #Ec4D57;
 }
+
+
 .panel-body {
     border: 1px #808080 solid; /* Параметры рамки */
-    background: #17a2b8; /* Цвет фона */
+    background: white; /* Цвет фона */
     padding: 20px; /* Поля вокруг текста */
     margin: 10px; /* Отступы вокруг */
     border-radius: 10px; /* закругленные углы рамки */
  }
-
-.panel-body h4 {
-    font-size: 30px;
+.panel-body span{
+    font-size:17px;
     font-family: Calibri;
-    text-shadow: black 2px 3px 4px;
+    text-shadow: black 0px 0px 0px;
     font-style: initial;
-    color: white;
-
+}
+.panel-body h4 {
+    font-size: 34px;
+    font-family: Calibri;
+    text-shadow: #4f4c4c 1px 1px 1px;
+    font-style: initial;
+    color: #ff0000;
 }
 
 #da {
     background-color: white;
 }
 #field-in-form{
-    color: white;
     font-size:17px;
     font-family: Calibri;
-    text-shadow: black 1px 3px 4px;
+    text-shadow: black 0px 0px 0px;
     font-style: initial;
 }
 
 /* training-card */
+
+
+.card {
+    box-shadow: 2px 2px 9px darkgrey;
+    margin-bottom: 10px;
+    /*background-color: rgba(52,255,0,0.06);*/
+
+}
+
 .card-body h6 {
     margin-top: -15px;
 }
 .card-body p, li {
     font-size: small;
     text-align: justify;
+}
+
+#card-detail{
+    border: 1px rgba(0, 0, 0, 0.13) solid; /* Параметры рамки */
+    background: white; /* Цвет фона */
+    border-radius: 5px; /* закругленные углы рамки */
+
 }
 #card-detail h3 {
     color: #0056b3;

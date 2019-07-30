@@ -15,7 +15,8 @@ class UserForm(forms.ModelForm):
         widgets={
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'})
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'password': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 class UserFormEdit(forms.ModelForm):

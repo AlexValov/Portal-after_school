@@ -48,7 +48,15 @@ def account(request):
     })
 
 def profile(request):
-    return render(request, 'catalog/profile.html')
+    return redirect(catalog_in_profile)
+
+
+def catalog_in_profile(request):
+    user_tng = Tng.objects.filter(author=request.user)
+    return render(request, 'catalog/catalog_in_profile.html', {
+        'user_tng': user_tng
+    })
+
 
 def training_view(request, slug):
     training = Tng.objects.get(slug__iexact=slug)
@@ -61,7 +69,6 @@ def category_view(request, slug):
 
     category = SubCategory.objects.get(slug__iexact=slug)
     tng_of_category = category.tng_set.all()
-
     return render(request, 'catalog/catalog.html', {
         'category': category,
         'tng_of_category': tng_of_category
@@ -75,14 +82,29 @@ def add_training(request):
             tng = form.save(commit=False)
             tng.author = request.user
             tng.save()
-            return redirect(index)
-
-
+            return redirect(tng)
     return render(request, 'catalog/add_training.html', {
         'form': form
     })
 
+def training_edit(request, slug):
+    training = Tng.objects.get(slug__iexact=slug)
+    form = TrainingForm(instance=training)
+    if request.method == "POST":
+        form = TrainingForm(request.POST, request.FILES, instance=Tng.objects.get(slug__iexact=slug))
+        if form.is_valid():
+            tng = form.save()
+            return redirect(catalog_in_profile)
+    return render(request, 'catalog/add_training.html', {
+        'form': form,
+        'training': training
+    })
 
-
-
-
+def training_delete(request, slug):
+    training = Tng.objects.get(slug__iexact=slug)
+    if request.method == "POST":
+        training.delete()
+        return redirect(catalog_in_profile)
+    return render(request, 'catalog/training_delete.html', {
+        'training': training
+    })
