@@ -3,8 +3,7 @@
 
 {% block content %}
 <div class="container offset-2 mt-3">
-    <h3 >{{ category.name }}</h3>
-    {% for tng in page_object.object_list %}
+    {% for tng in tng_of_category %}
     <div class="card w-75">
       <div class="card-body" >
           <div class="row">
@@ -39,37 +38,7 @@
           </div>
       </div>
     </div>
-       
+
     {% endfor %}
-
-    {% if is_paginated %}
-
-    <nav aria-label="...">
-      <ul class="pagination">
-        <li class="page-item {% if not prev_url %} disabled {% endif %}">
-          <a class="page-link" href="{{ prev_url }}" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-
-          {% for n in page_object.paginator.page_range %}
-              {% if page_object.number == n %}
-              <li class="page-item active">
-                  <a class="page-link" href="?page={{ n }}">{{ n }}
-                      <span class="sr-only">(current)</span>
-                  </a>
-              </li>
-              {% else %}
-              <li class="page-item">
-                  <a class="page-link" href="?page={{ n }}">{{ n }}</a>
-              </li>
-              {% endif %}
-          {% endfor %}
-        <li class="page-item">
-          <a class="page-link" href="{{ next_url }}">Next</a>
-        </li>
-      </ul>
-    </nav>
-    {% endif %}
 </div>
-
-
 {% endblock %}

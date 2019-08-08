@@ -5,17 +5,32 @@ from django.shortcuts import reverse
 from transliterate import translit
 from django.contrib.auth.models import User
 
-# Create your models here.
 
-class Category(models.Model):
+class GeneralCategory(models.Model):
     name = models.CharField(max_length=100)
-
-    class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name
+
+class Category(models.Model):
+    general_category = models.ForeignKey(GeneralCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('category_view', kwargs={'slug': self.slug})
+
+def pre_save_category_slug(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        slug = slugify(translit(str(instance.name), reversed=True))
+        instance.slug = slug
+
+pre_save.connect(pre_save_category_slug, sender=Category)
+
+
 
 class SubCategory(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -74,6 +89,11 @@ class Tng(models.Model):
 
     def __str__(self):
         return self.title
+
+#сортировка по дате публикации
+    class Meta:
+        ordering=['-date_pub']
+
 
 def pre_save_tng_slug(sender, instance, *args, **kwargs):
     if not instance.slug:

@@ -1,9 +1,8 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-     <div class="container">
-       <div class="row justify-content-center align-items-center ">
-         <div class="col-3 ">
+<div class="row justify-content-center align-items-center mt-4">
+    <div class="col-xs-3 col-sm-3 col-md-3 ">
         <div class="panel-body ">
            <h4 class="text-center">Регистрация:</h4>
             <form method="POST" enctype="multipart/form-data">
@@ -12,13 +11,13 @@
                  <div class="form-group " id="field-in-form">
                      <span>{{ field.label }}</span>
                               {{ field }}
-                            {% endfor %}
+
                  </div>
+                {% endfor %}
               <button type="submit" class="btn btn-red w-100">Зарегистрироваться</button>
             </form>
         </div>
-     </div>
-        </div>
-     </div>
+    </div>
+</div>
 {% endblock %}
 
