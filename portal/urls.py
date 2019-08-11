@@ -34,7 +34,10 @@ urlpatterns = [
     path('catalog/training/<str:slug>/', views.training_view, name='training_view'),
     path('catalog/training_add/', views.add_training, name='add_training'),
     path('catalog/<str:slug>/edit/', views.training_edit, name='training_edit'),
-    path('catalog/<str:slug>/delete/', views.training_delete, name='training_delete')
+    path('catalog/<str:slug>/delete/', views.training_delete, name='training_delete'),
+    path('catalog/about_us/', views.about_us, name='about_us'),
+    path('catalog/advertising/', views.advertising, name='advertising'),
+    path('catalog/contacts/', views.contacts, name='contacts')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 from django.views.generic import RedirectView

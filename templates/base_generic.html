@@ -67,7 +67,7 @@
     <div class="nav-panel">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <a class="navbar-brand" href="{% url 'index' %}">
-                  <img src="/static/img/logo-school.png" height="50" width="170" class="d-inline-block align-top" alt="">
+                  <img src="/static/img/logo-school.png" height="60" width="220" class="d-inline-block align-top" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -123,30 +123,31 @@
            </div>
           <div class="container-fluid text-center text-md-left">
             <div class="row"  id="bgfooter" >
-              <div class="col-md-6 mt-md-0 mt-3">
-                  <a class="navbar-brand mt-3" href="{% url 'index' %}">
+              <div class="col-md-3 mt-md-0 mt-3">
+                  <a class="navbar-brand mt-2" href="{% url 'index' %}">
                       <img src="../../static/img/logo-footer.png" height="50" width="170" alt="">
                   </a>
               </div>
               <hr class="clearfix w-100 d-md-none pb-3">
-              <div class="col-md-3 mb-md-0 mb-3">
+              <div class="col-md-6 mb-md-0 mt-2">
 {#                <h5 class="text-uppercase">Информация</h5>#}
                 <ul class="list-unstyled">
                   <li>
-                    <a href="#!">О нас</a>
+                    <a href="{% url 'about_us' %}">О нас</a>
                   </li>
                   <li>
-                    <a href="#!">Курсы</a>
+                    <a href="{% url 'advertising' %}">Реклама на сайте</a>
                   </li>
                   <li>
-                    <a href="#!">Занятия</a>
-                  </li>
-                  <li>
-                    <a href="#!">Контакты</a>
+                    <a href="{% url 'contacts' %}">Контакты</a>
                   </li>
                 </ul>
-
               </div>
+              <div class="col-md-3 mb-md-0 mt-2">
+                  <h6>Социальные сети:</h6>
+                <img src="../../static/img/soc_seti.png" height="30" width="130" alt="">
+              </div>
+
             </div>
           </div>
 

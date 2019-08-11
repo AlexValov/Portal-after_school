@@ -72,20 +72,6 @@
             {% endfor %}
         </div>
     </div>
-
-    <div class="col-10">
-
-        <div class="mt-5">
-        <h4>Новые</h4>
-            {% for training in tng %}
-                <img src="{{ training.image.url }}" width="50" height="50" alt="">
-                 <span>{{ training.title }}</span>
-            {% endfor %}
-        </div>
-    </div>
-
-
-
 </div>
 
 {% endblock %}

@@ -214,6 +214,12 @@ body{
   /*height: 0px;*/
   color: white;
 }
+
+.page-footer a{
+    color: white;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif, bold;
+
+}
 .footer-copyright {
     background-color: black;
 }

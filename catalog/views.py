@@ -163,3 +163,13 @@ def training_delete(request, slug):
     return render(request, 'catalog/training_delete.html', {
         'training': training
     })
+
+
+def about_us(request):
+    return render(request, 'footer/about_us.html')
+
+def advertising(request):
+    return render(request, 'footer/advertising.html')
+
+def contacts(request):
+    return render(request, 'footer/contacts.html')
