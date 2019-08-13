@@ -25,7 +25,7 @@ SECRET_KEY = '!5%5j_asananq&&n1j5%shyx=+(l3_((4*j8jps%p5ls6#==bt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['secret-forest-23964.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -130,5 +130,10 @@ LOGIN_REDIRECT_URL = '/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

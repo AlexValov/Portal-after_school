@@ -14,3 +14,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portal.settings')
 
 application = get_wsgi_application()
+
+#whitenoise on heroku
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
