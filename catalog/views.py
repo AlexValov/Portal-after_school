@@ -124,7 +124,7 @@ def category_view(request, slug):
         'next_url': next_url
     }
 
-    return render(request, 'catalog/catalog.html', context = context)
+    return render(request, 'catalog.html', context = context)
 
 
 def add_training(request):
