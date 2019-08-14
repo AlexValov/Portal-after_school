@@ -41,7 +41,7 @@ def category_in_menu(request):
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
 
-    return render (request, 'category_in_menu.html', {
+    return render (request, 'catalog\category_in_menu.html' ,{
         'generalcategories':  generalcategories,
         'categories': categories,
         'subcategories': subcategories
@@ -82,7 +82,7 @@ def profile(request):
 
 def catalog_in_profile(request):
     user_tng = Tng.objects.filter(author=request.user)
-    return render(request, 'catalog_in_profile.html', {
+    return render(request, 'catalog/catalog_in_profile.html', {
         'user_tng': user_tng
     })
 
@@ -124,7 +124,7 @@ def category_view(request, slug):
         'next_url': next_url
     }
 
-    return render(request, 'catalog.html', context = context)
+    return render(request, 'catalog/catalog.html', context = context)
 
 
 def add_training(request):
