@@ -34,17 +34,18 @@ def search_query(request):
 
     })
 
-def profile(request):
-    return redirect(catalog_in_profile)
+
 
 def category_in_menu(request):
-    generalcategories = GeneralCategory.objects.all()
-    categories = Category.objects.all()
+    # generalcategories = GeneralCategory.objects.all()
+    # categories = Category.objects.all()
+    # subcategories = SubCategory.objects.all()
 
-    return render (request, 'catalog\category_in_menu.html' ,{
-        'generalcategories':  generalcategories,
-        'categories': categories
-    })
+    return render (request, 'catalog\category_in_menu.html'
+        # 'generalcategories':  generalcategories,
+        # 'categories': categories,
+        # 'subcategories': subcategories
+   )
 
 
 def sign_up(request):
@@ -75,7 +76,8 @@ def account(request):
         'user_form': user_form
     })
 
-
+def profile(request):
+    return redirect(catalog_in_profile)
 
 
 def catalog_in_profile(request):
