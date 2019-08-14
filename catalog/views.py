@@ -37,15 +37,8 @@ def search_query(request):
 
 
 def category_in_menu(request):
-    generalcategories = GeneralCategory.objects.all()
-    categories = Category.objects.all()
-    subcategories = SubCategory.objects.all()
 
-    return render (request, 'catalog\category_in_menu.html' ,{
-        'generalcategories':  generalcategories,
-        'categories': categories,
-        'subcategories': subcategories
-    })
+    return render (request, 'catalog\category_in_menu.html')
 
 
 def sign_up(request):

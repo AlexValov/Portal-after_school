@@ -1,39 +1,19 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="row justify-content-md-center">
+    <div class="col-9 mt-5">
+        <h3>О нас</h3>
+        <p>Первый и единственный в Приднестровье каталог данной тематики. В нашем каталоге собрана информация о всех спортивных и образовательных организациях.
+            <br>
+            .............................................................
+        ...................................................................
+        ....................................................................
+            <br>
+        Ваши предложения и вопросы пишите нам на............. </p>
 
-              <div class="row justify-content-center align-items-center mb-5">
-                <div class="col-8 ">
-                   <h2 class="text-center mt-3">Каталог зянятий Приднестровья</h2>
-                    {% for c in generalcategories %}
-                        <br>
-
-                        <h3 id="text-in-card">{{ c.name }}</h3>
-
-                 <div class="card-columns">
-                {% for b in c.category_set.all %}
-
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ b.name }} </h5>
-                         {% for a in b.subcategory_set.all %}
-                            <a  href="{{ a.get_absolute_url }}">{{ a.name }} ({{ a.tng_set.count }})</a> </br>
-                         {% endfor %}
-                    </div>
-                  </div>
-                 {% endfor %}
-                 </div>
-                {% endfor %}
-                </div>
-          </div>
-
-
-
+    </div>
 </div>
 
+
 {% endblock %}
-
-
-
-
