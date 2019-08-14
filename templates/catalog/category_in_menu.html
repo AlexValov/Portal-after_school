@@ -1,6 +1,4 @@
-{% extends "base_generic.html" %}
 
-{% block content %}
 <div class="container-fluid">
 
               <div class="row justify-content-center align-items-center mb-5">
@@ -14,6 +12,14 @@
                  <div class="card-columns">
                 {% for b in c.category_set.all %}
 
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ b.name }} </h5>
+                         {% for a in b.subcategory_set.all %}
+                            <a  href="{{ a.get_absolute_url }}">{{ a.name }} ({{ a.tng_set.count }})</a> </br>
+                         {% endfor %}
+                    </div>
+                  </div>
                  {% endfor %}
                  </div>
                 {% endfor %}
@@ -23,8 +29,6 @@
 
 
 </div>
-
-{% endblock %}
 
 
 
