@@ -82,7 +82,7 @@ def profile(request):
 
 def catalog_in_profile(request):
     user_tng = Tng.objects.filter(author=request.user)
-    return render(request, 'catalog/catalog_in_profile.html', {
+    return render(request, 'catalog_in_profile.html', {
         'user_tng': user_tng
     })
 
