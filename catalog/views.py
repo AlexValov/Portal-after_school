@@ -34,7 +34,8 @@ def search_query(request):
 
     })
 
-
+def profile(request):
+    return redirect(catalog_in_profile)
 
 def category_in_menu(request):
     generalcategories = GeneralCategory.objects.all()
@@ -76,8 +77,7 @@ def account(request):
         'user_form': user_form
     })
 
-def profile(request):
-    return redirect(catalog_in_profile)
+
 
 
 def catalog_in_profile(request):
