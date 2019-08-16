@@ -47,37 +47,12 @@ body{
 .image {
 	position: relative;
 }
-/*.image h1 {*/
-	/*position: absolute;*/
-	/*top	: 250px;*/
-	/*left: 0;*/
-	/*width: 100%;*/
-    /*color: white;*/
-	/*font: bold 50x/90px, cosmic-sans;*/
-	/*#background: rgba(0, 0, 0, 0.3);*/
-	/*#padding: 90px;*/
-    /*text-align: center;*/
-/*}*/
 
 .carousel-caption  {
     position: absolute;
-	/*top	: 250px;*/
-	/*left: 0;*/
-	/*width: 100%;*/
     color: white;
-	/*font: bold 50x/90px, cosmic-sans;*/
-	/*#background: rgba(0, 0, 0, 0.3);*/
-
 }
-#carousel-img-one {
-    font-size: 50px;
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif, bold;
-    font-style: initial;
-    text-align: justify-all;
-    padding: 100px;
-    text-shadow: #6c757d 2px 3px 4px;
 
-}
 #carousel-img-two {
     font-size: 45px;
     font-family: Calibri;
@@ -85,8 +60,8 @@ body{
     font-style: initial;
     text-align: right;
     padding: 70px;
-
 }
+
 #carousel-img-three {
     font-size: 60px;
     font-family: Calibri;
@@ -96,18 +71,14 @@ body{
     padding: 70px;
 }
 
-
-
 /*страницы регистрации и входа и всех форм*/
 .bg-ruby {
   background-color:#ebebeb;
-
 }
 
 .btn-red {
     color: white;
     background-color: #E21E35;
-
 }
 
 .btn-red:hover,
@@ -116,7 +87,6 @@ body{
   background-color: #Ec4D57;
 }
 
-
 .panel-body {
     border: 1px #808080 solid; /* Параметры рамки */
     background: #007bff2e; /* Цвет фона */
@@ -124,6 +94,7 @@ body{
     margin: 10px; /* Отступы вокруг */
     border-radius: 10px; /* закругленные углы рамки */
  }
+
 .panel-body span{
     font-size:17px;
     font-family: Calibri;
@@ -141,6 +112,7 @@ body{
 #da {
     background-color: white;
 }
+
 #field-in-form{
     font-size:17px;
     font-family: Calibri;
@@ -149,7 +121,6 @@ body{
 }
 
 /* training-card */
-
 #text-in-card{
     text-align: center;
     color: #fd7e14;
@@ -160,19 +131,17 @@ body{
     /*border: 1px #808080 solid; !* Параметры рамки *!*/
     /*padding: 5px; !* Поля вокруг текста *!*/
     /*border-radius: 3px; !* закругленные углы рамки *!*/
-
-
 }
+
 .card {
     box-shadow: 2px 2px 9px darkgrey;
     margin-bottom: 10px;
-    /*background-color: rgba(52,255,0,0.06);*/
-
 }
 
 .card-body h6 {
     margin-top: -15px;
 }
+
 .card-body p, li {
     font-size: small;
     text-align: justify;
@@ -182,16 +151,18 @@ body{
     border: 1px rgba(0, 0, 0, 0.13) solid; /* Параметры рамки */
     background: white; /* Цвет фона */
     border-radius: 5px; /* закругленные углы рамки */
-
 }
+
 #card-detail h3 {
     color: #0056b3;
 }
+
 #card-detail p {
     font-size: 14px;
     line-height: 18px;
     text-align: justify;
 }
+
 #card-detail li {
     font-size: 14px;
     line-height: 18px;
@@ -200,26 +171,21 @@ body{
 /* FOOTER */
 #bgfooter {
     background-image: url("../../static/img/bgfooter.png");
-
 }
+
 .page-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 60px;
-  /*position: relative;*/
-  /*left: 0;*/
-  /*bottom: 0px;*/
-  /*width: 100%;*/
-  /*height: 0px;*/
   color: white;
 }
 
 .page-footer a{
     color: white;
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif, bold;
-
 }
+
 .footer-copyright {
     background-color: black;
 }
