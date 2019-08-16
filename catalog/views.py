@@ -41,7 +41,7 @@ def category_in_menu(request):
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
 
-    return render (request, 'catalog\../templates/category_in_menu.html', {
+    return render (request, 'category_in_menu.html', {
         'general_categories':  general_categories,
         'categories': categories,
         'subcategories': subcategories

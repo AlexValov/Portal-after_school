@@ -1,6 +1,10 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+
+        <script type="text/javascript">
+          VK.init({apiId: 7100333, onlyWidgets: true});
+        </script>
 <div class="container w-50  mt-3 bg-white" id="card-detail">
     <div class="row ">
         <div class="col mb-2 mt-2">
@@ -42,9 +46,9 @@
         </div>
     </div>
         <!-- Put this div tag to the place, where the Comments block will be -->
-        <div id="vk_comments"></div>
+    <div id="vk_comments"></div>
         <script type="text/javascript">
         VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
-        </script>
+    </script>
 </div>
 {% endblock %}
