@@ -15,12 +15,12 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-<!-- Put this script tag to the <head> of your page -->
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
+        <!-- Put this script tag to the <head> of your page -->
+        <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
 
-<script type="text/javascript">
-  VK.init({apiId: 7075437, onlyWidgets: true});
-</script>
+        <script type="text/javascript">
+          VK.init({apiId: 7075437, onlyWidgets: true});
+        </script>
 </head>
 <body>
 <div class wrapper >
@@ -56,15 +56,12 @@
                       {% else %}
                            <a href="{% url 'login'%}?next={{request.path}}"><i class="fas fa-sign-in-alt " style="color:#B5D56A"></i> Войти</a>&nbsp&nbsp
                            <a href="{% url 'sign-up'%}" ><i class="fas fa-user-plus" style="color:#B5D56A"></i> Зарегистрироваться </a>
-
                       {% endif %}
-
-
                     </div>
                 </div>
             </div>
         </div>
-    <div class="nav-panel">
+        <div class="nav-panel">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <a class="navbar-brand" href="{% url 'index' %}">
                   <img src="/static/img/logo-school.png" height="60" width="220" class="d-inline-block align-top" alt="">
@@ -83,7 +80,6 @@
                     <a class="nav-link" href="{% url 'profile' %}">Профиль</a>
                       {% else %}
                     <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Профиль</a>
-
                       {% endif %}
                   </li>
                   <li class="nav-item">
@@ -91,10 +87,10 @@
                   </li>
                 </ul>
                  {% if user.is_authenticated %}
-             <a class="btn btn-outline-info mr-5" href="{% url 'add_training' %}" role="button">Добавить занятие в каталог </a>
-                    {% else %}
-             <a class="btn btn-outline-info mr-5"  href="{% url 'login'%}?next={{request.path}}" role="button">Добавить занятие в каталог </a>
-                    {% endif %}
+                 <a class="btn btn-outline-info mr-5" href="{% url 'add_training' %}" role="button">Добавить занятие в каталог </a>
+                        {% else %}
+                 <a class="btn btn-outline-info mr-5"  href="{% url 'login'%}?next={{request.path}}" role="button">Добавить занятие в каталог </a>
+                        {% endif %}
 
                 <form class="form-inline my-2 my-lg-0" action="{% url 'search_query' %}">
                   <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" name="search">
@@ -102,61 +98,52 @@
                 </form>
               </div>
             </nav>
-    </div>
+        </div>
     </div>
     <div class="content">
 
                 {% block content %}{% endblock %}
-
-
     </div>
-    </br>
-    </br>
-    </br>
-
-
+        </br>
+        </br>
+        </br>
                 <!-- Footer -->
-        <footer class="page-footer font-small blue ">
-           <div class="color-bar">
-                  <div class="col color-bar  bg-secondary" style="height: 2px"></div>
-
-           </div>
-          <div class="container-fluid text-center text-md-left">
-            <div class="row"  id="bgfooter" >
-              <div class="col-md-3 mt-md-0 mt-3">
-                  <a class="navbar-brand mt-2" href="{% url 'index' %}">
-                      <img src="../../static/img/logo-footer.png" height="50" width="170" alt="">
-                  </a>
-              </div>
-              <hr class="clearfix w-100 d-md-none pb-3">
-              <div class="col-md-6 mb-md-0 mt-2">
+    <footer class="page-footer font-small blue ">
+       <div class="color-bar">
+          <div class="col color-bar  bg-secondary" style="height: 2px"></div>
+       </div>
+       <div class="container-fluid text-center text-md-left">
+        <div class="row"  id="bgfooter" >
+          <div class="col-md-3 mt-md-0 mt-3">
+              <a class="navbar-brand mt-2" href="{% url 'index' %}">
+                  <img src="../../static/img/logo-footer.png" height="50" width="170" alt="">
+              </a>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-6 mb-md-0 mt-2">
 {#                <h5 class="text-uppercase">Информация</h5>#}
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="{% url 'about_us' %}">О нас</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'advertising' %}">Реклама на сайте</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'contacts' %}">Контакты</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-3 mb-md-0 mt-2">
-                  <h6>Социальные сети:</h6>
-                <img src="../../static/img/soc_seti.png" height="30" width="130" alt="">
-              </div>
-
-            </div>
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% url 'about_us' %}">О нас</a>
+              </li>
+              <li>
+                <a href="{% url 'advertising' %}">Реклама на сайте</a>
+              </li>
+              <li>
+                <a href="{% url 'contacts' %}">Контакты</a>
+              </li>
+            </ul>
           </div>
-
-          <div class="footer-copyright text-center py-1">© 2019 Copyright:
-            <a href="{% url 'index' %}"> HOBBY.MD</a>
+          <div class="col-md-3 mb-md-0 mt-2">
+              <h6>Социальные сети:</h6>
+            <img src="../../static/img/soc_seti.png" height="30" width="130" alt="">
           </div>
-        </footer>
-
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-1">© 2019 Copyright:
+        <a href="{% url 'index' %}"> HOBBY.MD</a>
+      </div>
+    </footer>
 </div>
-
 </body>
 </html>

@@ -1,24 +1,21 @@
 {% extends 'catalog/profile.html' %}
 
 {% block body %}
-
 <div class="row  offset-1">
     <div class="col-md-7 col-sm-7">
-            <div class="panel-body ">
-               <h4 class="text-center ">Добавить занятие</h4>
-                <hr class="bg-info">
-              <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                  {% for field in form %}
-{#                 <div class="form-group " id="field-in-form">   убрал из-за смещения футера #}
-                    <span>{{ field.label }}</span>
-                     {{ field }}
-                        {% endfor %}
-{#                 </div>#}
-                  <br>
-                <button type="submit" class="btn btn-red w-100 ">Добавить</button>
-              </form>
-            </div>
+        <div class="panel-body ">
+           <h4 class="text-center ">Добавить занятие</h4>
+            <hr class="bg-info">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+              {% for field in form %}
+                <span>{{ field.label }}</span>
+                 {{ field }}
+              {% endfor %}
+              <br>
+            <button type="submit" class="btn btn-red w-100 ">Добавить</button>
+          </form>
+        </div>
     </div>
 </div>
 {% endblock %}

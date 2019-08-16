@@ -1,49 +1,38 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
-{% if next %}
+    {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    {% if next %}
     {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
     {% else %}
-     <div class="container">
-       <div class="row justify-content-center align-items-center ">
-         <div class="col-sx-4 col-md-4">
-            <div class="panel-body mt-5">
-               <h4 class="text-center" style="font-size:25px">Введите логин и пароль:</h4>
-
-                <form method="POST">
-                    {% csrf_token %}
+ <div class="container">
+   <div class="row justify-content-center align-items-center ">
+      <div class="col-sx-4 col-md-4">
+        <div class="panel-body mt-5">
+           <h4 class="text-center" style="font-size:25px">Введите логин и пароль:</h4>
+            <form method="POST">
+                {% csrf_token %}
                  <div class="field-in-form">
                   {% for field in form %}
-
                      <span>{{ field.label }}</span>
                       <br/>
                       {{ field }}
                       <br/>
-    {% endfor %}
+                  {% endfor %}
                  </div>
-
-                      <button type="submit" class="btn btn-red  mb-2 float-right">Войти</button>
-
-                <a href="{% url 'password_reset' %}">Забыли пароль?</a>
-                    <br>
-                                <a href="{% url 'sign-up' %}">Зарегистрироваться</a>
-
-
-                 </form>
-            </div>
-         </div>
-         </div>
-     </div>
+                  <button type="submit" class="btn btn-red  mb-2 float-right">Войти</button>
+                   <a href="{% url 'password_reset' %}">Забыли пароль?</a>
+                   <br>
+                   <a href="{% url 'sign-up' %}">Зарегистрироваться</a>
+             </form>
+        </div>
+      </div>
+    </div>
+ </div>
     {% endif %}
-{% endif %}
-
-
-
+    {% endif %}
 {% endblock %}

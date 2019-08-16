@@ -13,13 +13,13 @@ from django.core.paginator import Paginator
 
 
 def index(request):
-    generalcategories = GeneralCategory.objects.all()
+    general_categories = GeneralCategory.objects.all()
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
     tng = Tng.objects.all()[:5]
 
     return render (request, 'index.html' ,{
-        'generalcategories':  generalcategories,
+        'general_categories':  general_categories,
         'categories': categories,
         'subcategories': subcategories,
         'tng': tng
@@ -37,12 +37,12 @@ def search_query(request):
 
 
 def category_in_menu(request):
-    generalcategories = GeneralCategory.objects.all()
+    general_categories = GeneralCategory.objects.all()
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
 
-    return render (request, 'catalog\category_in_menu.html' ,{
-        'generalcategories':  generalcategories,
+    return render (request, 'catalog\../templates/category_in_menu.html', {
+        'general_categories':  general_categories,
         'categories': categories,
         'subcategories': subcategories
     })
