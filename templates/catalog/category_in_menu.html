@@ -19,7 +19,7 @@
                       <h5 class="card-title">{{ b.name }} </h5>
                          {% for a in b.subcategory_set.all %}
                             <a  href="{{ a.get_absolute_url }}">{{ a.name }} ({{ a.tng_set.count }})</a>
-                             </br>
+                             <br>
                          {% endfor %}
                     </div>
                   </div>
