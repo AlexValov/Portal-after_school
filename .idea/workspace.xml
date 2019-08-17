@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/static/css/style.css" description="    padding: 9px; /* Поля вокруг текста */&#10;" line="103" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf2465bf-5d54-4716-baa6-23f21254a908" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="bf2465bf-5d54-4716-baa6-23f21254a908" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/catalog/catalog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+            <state relative-caret-position="121">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -186,7 +183,6 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/base_generic.html" />
         <option value="$PROJECT_DIR$/catalog/views.py" />
-        <option value="$PROJECT_DIR$/templates/catalog/catalog.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/registration/account.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -195,10 +191,11 @@
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/footer/advertising.html" />
         <option value="$PROJECT_DIR$/templates/catalog/training.html" />
+        <option value="$PROJECT_DIR$/templates/catalog/catalog.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-15" />
     <option name="y" value="557" />
     <option name="width" value="1443" />
@@ -429,12 +426,12 @@
       <workItem from="1565722808346" duration="3711000" />
       <workItem from="1565806211430" duration="4665000" />
       <workItem from="1565974486200" duration="9357000" />
-      <workItem from="1566060903075" duration="5292000" />
+      <workItem from="1566060903075" duration="5536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="455008000" />
+    <option name="totallyTimeSpent" value="455252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -447,9 +444,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.18051577" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.18051577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5009009" side_tool="true" weight="0.22492836" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -463,7 +459,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502149" side_tool="true" weight="0.29032257" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.497851" visible="true" weight="0.40053764" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.497851" visible="true" weight="0.42876345" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49919093" weight="0.8395722" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -774,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/catalog/catalog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        <state relative-caret-position="121">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
         </state>
       </provider>
     </entry>
