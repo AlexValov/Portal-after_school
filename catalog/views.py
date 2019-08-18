@@ -16,13 +16,11 @@ def index(request):
     generalcategories = GeneralCategory.objects.all()
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
-    tng = Tng.objects.all()[:5]
 
     return render (request, 'index.html' ,{
         'generalcategories':  generalcategories,
         'categories': categories,
-        'subcategories': subcategories,
-        'tng': tng
+        'subcategories': subcategories
     })
 
 def search_query(request):
@@ -96,7 +94,7 @@ def training_view(request, slug):
     })
 
 def category_view(request, slug):
-    # category = SubCategory.objects.get(slug__iexact=slug)
+    # scategory = SubCategory.objects.get(slug__iexact=slug)
     category = get_object_or_404(SubCategory, slug__iexact=slug)
     tng_of_category = category.tng_set.all()
 
@@ -121,7 +119,8 @@ def category_view(request, slug):
         'page_object': page,
         'is_paginated': is_paginated,
         'prev_url': prev_url,
-        'next_url': next_url
+        'next_url': next_url,
+        'category': category
     }
 
     return render(request, 'catalog/catalog.html', context = context)
