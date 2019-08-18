@@ -8,6 +8,7 @@
             {% for c in generalcategories %}
             <br>
             <h3 id="text-in-card">{{ c.name }}</h3>
+               <hr class="bg-warning">
                  <div class="card-columns">
                      {% for b in c.category_set.all %}
                   <div class="card">
