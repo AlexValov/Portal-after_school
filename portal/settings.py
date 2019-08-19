@@ -128,17 +128,8 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = '/'
 
-
-
-if ON_OPENSHIFT:
-    MEDIA_ROOT = os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'media')
-    MEDIA_URL = '/media/'
-else:
-    MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
-    MEDIA_URL = '/media/'
-#
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 import dj_database_url
