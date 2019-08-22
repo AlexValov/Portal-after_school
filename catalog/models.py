@@ -4,6 +4,7 @@ from django.utils.text import slugify
 from django.shortcuts import reverse
 from transliterate import translit
 from django.contrib.auth.models import User
+from autoslug import AutoSlugField
 
 
 class GeneralCategory(models.Model):
@@ -62,14 +63,19 @@ class Gender(models.Model):
     def __str__(self):
         return self.name
 
+class AgeFrom(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name
 
 class Tng(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, verbose_name='Категория:')
     title = models.CharField(max_length=100, db_index=True, verbose_name='Название:')
     gender = models.ForeignKey(Gender, on_delete=True, verbose_name='Возраст:')
-    age_from  = models.IntegerField(db_index=True, verbose_name='Со скольки лет:')
-    age_up = models.IntegerField(blank=True, db_index=True, verbose_name='До скольки лет:')
+    age_from  = models.ForeignKey(AgeFrom, on_delete=models.CASCADE, verbose_name='Со скольки лет:')
+    # age_up = models.IntegerField(blank=True, db_index=True, verbose_name='До скольки лет:')
     description = models.TextField(db_index=True, verbose_name='Описание:')
     image = models.ImageField(upload_to='tng_images/', blank=False, db_index=True, verbose_name='Картинка:')
     city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='Город:')
@@ -79,7 +85,8 @@ class Tng(models.Model):
     website =  models.CharField(blank=True, max_length=100, verbose_name='Сайт:')
     email = models.EmailField(verbose_name='Почта:')
     price = models.CharField(default='Бесплатно', max_length=50, verbose_name='Цена:')
-    slug = models.SlugField(blank=True, unique=True)
+    # slug = models.SlugField(blank=True, unique=True)
+    slug = AutoSlugField(blank=True, populate_from='title', unique=True)
     available = models.BooleanField(default=True)
     date_pub = models.DateTimeField(auto_now_add=True)
 
@@ -97,7 +104,7 @@ class Tng(models.Model):
 
 def pre_save_tng_slug(sender, instance, *args, **kwargs):
     if not instance.slug:
-        slug = slugify(translit(str(instance.title), reversed=True))
+        slug = slugify(translit(str(instance.title), 'ru', reversed=True))
         instance.slug = slug
 pre_save.connect(pre_save_tng_slug, sender=Tng)
 

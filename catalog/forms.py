@@ -36,13 +36,13 @@ class UserFormEdit(forms.ModelForm):
 class TrainingForm(forms.ModelForm):
     class Meta:
         model = Tng
-        fields = ('subcategory', 'title', 'gender', 'age_from', 'age_up', 'description', 'image', 'company', 'city', 'adress', 'phone', 'website', 'email', 'price')
+        fields = ('subcategory', 'title', 'gender', 'age_from', 'description', 'image', 'company', 'city', 'adress', 'phone', 'website', 'email', 'price')
         widgets={
             'subcategory': forms.Select(attrs={'class': 'form-control'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'gender': forms.Select(attrs={'class': 'form-control'}),
-            'age_from': forms.TextInput(attrs={'class': 'form-control'}),
-            'age_up': forms.TextInput(attrs={'class': 'form-control'}),
+            'age_from': forms.Select(attrs={'class': 'form-control'}),
+            # 'age_up': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'company': forms.TextInput(attrs={'class': 'form-control'}),
             'city': forms.Select(attrs={'class': 'form-control'}),

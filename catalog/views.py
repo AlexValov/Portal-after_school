@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.shortcuts import get_object_or_404
 import datetime
-from catalog.models import GeneralCategory, Category, SubCategory, Tng, City
+from catalog.models import GeneralCategory, Category, SubCategory, Tng
 from django.db.models import Q
 from django.core.paginator import Paginator
 
