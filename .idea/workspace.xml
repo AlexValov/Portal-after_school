@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/static/css/style.css" description="    padding: 9px; /* Поля вокруг текста */&#10;" line="103" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf2465bf-5d54-4716-baa6-23f21254a908" name="Default Changelist" comment="" />
+    <list default="true" id="bf2465bf-5d54-4716-baa6-23f21254a908" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catalog/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+            <state relative-caret-position="288">
+              <caret line="87" selection-start-line="81" selection-end-line="87" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -466,12 +468,12 @@
       <workItem from="1566235962084" duration="1170000" />
       <workItem from="1566238418729" duration="2332000" />
       <workItem from="1566409375769" duration="5198000" />
-      <workItem from="1566497964939" duration="1715000" />
+      <workItem from="1566497964939" duration="2661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475445000" />
+    <option name="totallyTimeSpent" value="476391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -795,8 +797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catalog/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+        <state relative-caret-position="288">
+          <caret line="87" selection-start-line="81" selection-end-line="87" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

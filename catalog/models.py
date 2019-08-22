@@ -79,7 +79,7 @@ class Tng(models.Model):
     description = models.TextField(db_index=True, verbose_name='Описание:')
     image = models.ImageField(upload_to='tng_images/', blank=False, db_index=True, verbose_name='Картинка:')
     city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='Город:')
-    company = models.CharField(max_length=100, db_index=True, verbose_name='Организация:')
+    company = models.CharField(max_length=99, db_index=True, verbose_name='Организация:')
     adress = models.CharField(max_length=100, db_index=True, verbose_name='Адрес:')
     phone = models.CharField(max_length=100, verbose_name='Телефон:')
     website =  models.CharField(blank=True, max_length=100, verbose_name='Сайт:')
