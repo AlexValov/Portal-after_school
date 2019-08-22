@@ -72,7 +72,7 @@ class AgeFrom(models.Model):
 class Tng(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, verbose_name='Категория:')
-    title = models.CharField(max_length=100, db_index=True, verbose_name='Название:')
+    title= models.CharField(max_length=100, db_index=True, verbose_name='Название:')
     gender = models.ForeignKey(Gender, on_delete=True, verbose_name='Возраст:')
     age_from  = models.ForeignKey(AgeFrom, on_delete=models.CASCADE, verbose_name='Со скольки лет:')
     # age_up = models.IntegerField(blank=True, db_index=True, verbose_name='До скольки лет:')
