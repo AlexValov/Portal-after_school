@@ -7,9 +7,8 @@ import datetime
 from catalog.models import GeneralCategory, Category, SubCategory, Tng
 from django.db.models import Q
 from django.core.paginator import Paginator
-
-
-# Create your views here.
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def index(request):
@@ -17,11 +16,12 @@ def index(request):
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
 
-    return render (request, 'index.html' ,{
+    return render (request, 'index.html', {
         'generalcategories':  generalcategories,
         'categories': categories,
         'subcategories': subcategories
     })
+
 
 def search_query(request):
     search_query = request.GET.get('search', '')
@@ -31,7 +31,6 @@ def search_query(request):
         'tng_of_category': tng_of_category
 
     })
-
 
 
 def category_in_menu(request):
@@ -54,9 +53,14 @@ def sign_up(request):
             new_user = User.objects.create_user(**user_form.cleaned_data)
             new_user.save()
             login(request, authenticate(
-                username = user_form.cleaned_data['username'],
-                password = user_form.cleaned_data['password']
+                username=user_form.cleaned_data['username'],
+                password=user_form.cleaned_data['password']
             ))
+            user_email = User.email
+            send_mail('Test email',
+                      'text massage',
+                      'alexsandrvalov@gmail.com',
+                      [user_email])
             return redirect(index)
     return render(request, 'registration/sign_up.html', {
         'user_form': user_form
@@ -73,6 +77,7 @@ def account(request):
     return render(request, 'registration/account.html', {
         'user_form': user_form
     })
+
 
 def profile(request):
     return redirect(catalog_in_profile)
@@ -92,6 +97,7 @@ def training_view(request, slug):
     return render(request, 'catalog/training.html', {
         'training': training
     })
+
 
 def category_view(request, slug):
     # scategory = SubCategory.objects.get(slug__iexact=slug)
@@ -139,6 +145,7 @@ def add_training(request):
         'form': form
     })
 
+
 def training_edit(request, slug):
     # training = Tng.objects.get(slug__iexact=slug)
     training = get_object_or_404(Tng, slug__iexact=slug)
@@ -152,6 +159,7 @@ def training_edit(request, slug):
         'form': form,
         'training': training
     })
+
 
 def training_delete(request, slug):
     # training = Tng.objects.get(slug__iexact=slug)
@@ -167,8 +175,10 @@ def training_delete(request, slug):
 def about_us(request):
     return render(request, 'footer/about_us.html')
 
+
 def advertising(request):
     return render(request, 'footer/advertising.html')
+
 
 def contacts(request):
     return render(request, 'footer/contacts.html')

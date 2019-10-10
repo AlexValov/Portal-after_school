@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import GeneralCategory, Category, SubCategory, Tng, Gender, City, AgeFrom
 
-# Register your models here.
+
 admin.site.register(GeneralCategory)
 admin.site.register(Category)
 admin.site.register(SubCategory)

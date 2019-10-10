@@ -13,6 +13,7 @@ class GeneralCategory(models.Model):
     def __str__(self):
         return self.name
 
+
 class Category(models.Model):
     general_category = models.ForeignKey(GeneralCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
@@ -24,13 +25,14 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('category_view', kwargs={'slug': self.slug})
 
+
 def pre_save_category_slug(sender, instance, *args, **kwargs):
     if not instance.slug:
         slug = slugify(translit(str(instance.name), reversed=True))
         instance.slug = slug
 
-pre_save.connect(pre_save_category_slug, sender=Category)
 
+pre_save.connect(pre_save_category_slug, sender=Category)
 
 
 class SubCategory(models.Model):
@@ -44,10 +46,13 @@ class SubCategory(models.Model):
     def get_absolute_url(self):
         return reverse('category_view', kwargs={'slug': self.slug})
 
+
 def pre_save_subcategory_slug(sender, instance, *args, **kwargs):
     if not instance.slug:
         slug = slugify(translit(str(instance.name), reversed=True))
         instance.slug = slug
+
+
 pre_save.connect(pre_save_subcategory_slug, sender=SubCategory)
 
 
@@ -57,17 +62,20 @@ class City(models.Model):
     def __str__(self):
         return self.name
 
+
 class Gender(models.Model):
     name = models.CharField(max_length=100, db_index=True)
 
     def __str__(self):
         return self.name
 
+
 class AgeFrom(models.Model):
     name = models.CharField(max_length=100, db_index=True)
 
     def __str__(self):
         return self.name
+
 
 class Tng(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -93,18 +101,18 @@ class Tng(models.Model):
     def get_absolute_url(self):
         return reverse('training_view', kwargs={'slug': self.slug})
 
-
     def __str__(self):
         return self.title
 
 #сортировка по дате публикации
     class Meta:
-        ordering=['-date_pub']
+        ordering = ['-date_pub']
 
 
 def pre_save_tng_slug(sender, instance, *args, **kwargs):
     if not instance.slug:
         slug = slugify(translit(str(instance.title), 'ru', reversed=True))
         instance.slug = slug
-pre_save.connect(pre_save_tng_slug, sender=Tng)
 
+
+pre_save.connect(pre_save_tng_slug, sender=Tng)
