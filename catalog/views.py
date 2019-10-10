@@ -8,7 +8,6 @@ from catalog.models import GeneralCategory, Category, SubCategory, Tng
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
-from django.conf import settings
 
 
 def index(request):
@@ -38,7 +37,7 @@ def category_in_menu(request):
     categories = Category.objects.all()
     subcategories = SubCategory.objects.all()
 
-    return render (request, 'category_in_menu.html', {
+    return render(request, 'category_in_menu.html', {
         'generalcategories':  generalcategories,
         'categories': categories,
         'subcategories': subcategories
@@ -56,11 +55,14 @@ def sign_up(request):
                 username=user_form.cleaned_data['username'],
                 password=user_form.cleaned_data['password']
             ))
-            user_email = User.email
-            send_mail('Test email',
-                      'text massage',
-                      'alexsandrvalov@gmail.com',
-                      [user_email])
+            # Send email
+            to_email = user_form.cleaned_data.get('email')
+            send_mail('Добро пожаловать на Hobby.md',
+                      'Дорогой друг, вы зарегистрировались на Hobby.md!',
+                      'a-valov-a@yandex.ru',
+                      [to_email],
+                      fail_silently=False
+                      )
             return redirect(index)
     return render(request, 'registration/sign_up.html', {
         'user_form': user_form
