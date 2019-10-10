@@ -138,7 +138,6 @@ DATABASES['default'].update(db_from_env)
 
 
 # send email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465

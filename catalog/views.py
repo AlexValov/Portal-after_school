@@ -55,7 +55,6 @@ def sign_up(request):
                 username=user_form.cleaned_data['username'],
                 password=user_form.cleaned_data['password']
             ))
-            # Send email
             to_email = user_form.cleaned_data.get('email')
             send_mail('Добро пожаловать на Hobby.md',
                       'Дорогой друг, вы зарегистрировались на Hobby.md!',
